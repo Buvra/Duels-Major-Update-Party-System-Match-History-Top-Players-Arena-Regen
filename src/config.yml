@@ -1,0 +1,110 @@
+config-version: 12
+
+
+# =========================
+# MYSQL STORAGE (EKLENDİ)
+# =========================
+storage:
+  type: SQLITE
+  file: duels.db
+  host: localhost
+  port: 3306
+  database: lduels
+  username: root
+  password: ""
+  useSSL: false
+
+# =========================
+
+request:
+  requires-cleared-inventory: false
+  prevent-creative-mode: false
+
+  use-own-inventory:
+    enabled: true
+    drop-inventory-items: true
+    use-permission: false
+
+  kit-selecting:
+    enabled: true
+    use-permission: false
+
+  arena-selecting:
+    enabled: true
+    use-permission: false
+
+  item-betting:
+    enabled: true
+    use-permission: false
+
+  money-betting:
+    enabled: true
+    use-permission: false
+
+  expiration: 30
+
+duel:
+  match:
+    max-duration: -1
+
+  prevent-inventory-open: true
+  protect-kit-items: true
+  remove-empty-bottle: true
+  prevent-teleport-to-match-players: true
+  force-allow-combat: true
+  cancel-if-moved: false
+
+  teleport-delay: 5
+  spawn-firework: true
+  arena-only-end-message: false
+  display-inventories: true
+
+countdown:
+  enabled: true
+  messages:
+    - "&eDüello &65 &esaniye içinde başlıyor..."
+    - "&eDüello &64 &esaniye içinde başlıyor..."
+    - "&eDüello &63 &esaniye içinde başlıyor..."
+    - "&eDüello &62 &esaniye içinde başlıyor..."
+    - "&eDüello &61 &esaniye içinde başlıyor..."
+    - "&aDüello başladı, başarılar!"
+  titles:
+    - "&a5"
+    - "&e4"
+    - "&63"
+    - "&c2"
+    - "&41"
+    - "&a&lBAŞLADI!"
+  prevent:
+    movement: true
+    launch-projectile: true
+    pvp: true
+    interact: true
+
+rating:
+  enabled: true
+  k-factor: 32
+  default-rating: 1400
+  queue-matches-only: false
+
+stats:
+  display-kit-ratings: true
+  display-nokit-rating: false
+  display-past-matches: true
+  matches-to-display: 5
+
+top:
+  update-interval: 5
+
+guis:
+  kit-selector:
+    rows: 2
+  arena-selector:
+    rows: 3
+  queues:
+    rows: 2
+
+soup:
+  hearts-to-regen: 3.5
+  remove-empty-bowl: true
+  cancel-if-already-full: true

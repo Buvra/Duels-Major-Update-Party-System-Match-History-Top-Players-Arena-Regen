@@ -1,0 +1,69 @@
+name: Duels
+main: me.realized.duels.DuelsPlugin
+version: 3.5.3
+softdepend: [Vault, PlaceholderAPI]
+
+description: Duels plugin optimized for private server.
+
+commands:
+  duel:
+    description: Send, accept, or deny a duel request.
+    aliases: [1v1, duello, düello]
+  parti:
+    description: Parti yonetim komutu.
+    aliases: [p]
+  queue:
+    description: Join or leave a queue.
+    aliases: [q]
+  spectate:
+    description: Spectate a duel.
+    aliases: [spec]
+  duels:
+    description: Administrative command of Duels.
+    aliases: [ds]
+  gecmisduellolar:
+    description: Oyuncunun gecmis duellolarini gosterir.
+    aliases: [geçmişdüellolar, duelhistory, matchhistory]
+    permission: duels.history
+  eniyiduellocular:
+    description: Oyuncunun gecmis duellolarini gosterir.
+    aliases: [eniyidüellocular, düellocular, eniyiler]
+    permission: duels.top
+  arenaregen:
+    description: Arena sifirlama bolgeleri yonetim komutu.
+    aliases: [ar]
+    permission: duels.admin
+  kitduzenle:
+    description: Kit esya dizilimini ozellestirir.
+    aliases: [layout, kitedit]
+
+permissions:
+  duels.*:
+    children:
+      duels.admin: true
+  duels.admin:
+    children:
+      duels.default: true
+      duels.stats.others: true
+      duels.kits.*: true
+      duels.teleport.bypass: true
+      duels.spectate: true
+      duels.spectate.anonymously: true
+      duels.use.*: true
+      duels.queue: true
+      duels.party: true
+      duels.layout: true
+  duels.default:
+    children:
+      duels.duel: true
+      duels.stats: true
+      duels.toggle: true
+      duels.top: true
+      duels.party: true
+      duels.layout: true
+  duels.duel:
+    default: true
+  duels.party:
+    default: true
+  duels.layout:
+    default: true
